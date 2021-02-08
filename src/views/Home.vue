@@ -1,20 +1,27 @@
 <template>
   <div class="home">
-    <HelloWorld msg="Wake up, Neo"/>
+    <List/>
+    <Search/>
+    <button> Criar lista </button>
     <button @click="sair"> Sair </button>
+    
   </div>
+  
 </template>
 
 <script>
 import firebase from 'firebase';
 
-import HelloWorld from '@/components/HelloWorld.vue'
+import Search from '@/components/Search'
+import List from '@/components/List'
 
 
 export default {
   name: 'home',
   components: {
-    HelloWorld 
+    Search,
+    List
+    
   },
   methods: {
     sair: function() {

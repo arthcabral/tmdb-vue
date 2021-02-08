@@ -2,6 +2,9 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import firebase from "firebase"
+import VueFirestore from 'vue-firestore'
+import "@firebase/firestore";
+
 
 
 Vue.config.productionTip = false
@@ -15,6 +18,9 @@ var firebaseConfig = {
   appId: "1:822974405394:web:d82eea15026f1414a331cb",
   measurementId: "G-J182Z45G9H"
 };
+
+Vue.use(VueFirestore);
+
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
