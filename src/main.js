@@ -2,14 +2,11 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import firebase from "firebase"
-import VueFirestore from 'vue-firestore'
-import "@firebase/firestore";
-
 
 
 Vue.config.productionTip = false
 
-var firebaseConfig = {
+const firebaseConfig = {
   apiKey: "AIzaSyBrn7mmA9x4VmHsPhoW8mHQmH4eWXE_KVc",
   authDomain: "vue-auth-firebase-e1e6b.firebaseapp.com",
   projectId: "vue-auth-firebase-e1e6b",
@@ -19,12 +16,9 @@ var firebaseConfig = {
   measurementId: "G-J182Z45G9H"
 };
 
-Vue.use(VueFirestore);
-
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
-
 
 let app = '';
 firebase.auth().onAuthStateChanged(() => {
