@@ -35,7 +35,7 @@ export default {
         .then(
           (user) => {
             this.$router.replace("home");
-            alert(`Bem Vindo, ${{ email }}`);
+           
           },
           (err) => {
             alert("Não foi possível realizar o login. " + err.message);
