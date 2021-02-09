@@ -22,7 +22,7 @@ firebase.analytics();
 
 let app = '';
 firebase.auth().onAuthStateChanged(() => {
-  if(!app) { 
+  if (!app) {
     app = new Vue({
       router,
       render: h => h(App),

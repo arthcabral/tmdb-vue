@@ -1,18 +1,10 @@
 <template>
   <div class="login">
     <h1>Login</h1>
-    <input
-      type="text"
-      placeholder="Email"
-      v-model="email"
-    >
-    <br>
-    <input
-      type="password"
-      placeholder="Senha"
-      v-model="senha"
-    >
-    <br>
+    <input type="text" placeholder="Email" v-model="email" />
+    <br />
+    <input type="password" placeholder="Senha" v-model="senha" />
+    <br />
     <div class="btn-login">
       <button @click="login">Login</button>
     </div>
@@ -26,29 +18,32 @@
 </template>
 
 <script>
-import firebase from 'firebase';
+import firebase from "firebase";
 export default {
   name: "login",
-  data () {
+  data() {
     return {
-      email: '',
-      senha: ''
+      email: "",
+      senha: "",
     };
   },
-   methods: {
-      login: function() {
-        firebase.auth().signInWithEmailAndPassword(this.email, this.senha).then(
+  methods: {
+    login: function () {
+      firebase
+        .auth()
+        .signInWithEmailAndPassword(this.email, this.senha)
+        .then(
           (user) => {
-            this.$router.replace('home')
-            alert(`Bem Vindo, ${{email}}`)
+            this.$router.replace("home");
+            alert(`Bem Vindo, ${{ email }}`);
           },
           (err) => {
-            alert('Não foi possível realizar o login. ' + err.message)
+            alert("Não foi possível realizar o login. " + err.message);
           }
         );
-      }
-    }
-  }
+    },
+  },
+};
 </script>
 
 <style scoped>

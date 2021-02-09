@@ -1,30 +1,35 @@
 <template>
-    <div class="home">
-      <button @click="sair"> Sair </button>  
-      <List/>
-      <Search/> 
-    </div>
+  <div class="home">
+    <button @click="sair">Encerrar sessão</button>
+    <List />
+    <Search />
+  </div>
 </template>
 
 <script>
-import firebase from 'firebase';
-import Search from '@/components/Search'
-import List from '@/components/List'
-
+import firebase from "firebase";
+import Search from "@/components/Search";
 
 export default {
-  name: 'home',
+  name: "home",
   components: {
     Search,
-    List
-    
   },
   methods: {
-    sair: function() {
-      firebase.auth().signOut().then(() => {
-        this.$router.replace('login')
-      })
-    }
-  }
-}
+    sair: function () {
+      firebase
+        .auth()
+        .signOut()
+        .then(() => {
+          this.$router.replace("login");
+        });
+    },
+  },
+};
 </script>
+<style scoped>
+.home{
+    width: 1000px;
+    margin:  auto;
+}
+</style>
