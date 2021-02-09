@@ -1,17 +1,13 @@
 <template>
-  <div class="home">
-    <List/>
-    <Search/>
-    <button> Criar lista </button>
-    <button @click="sair"> Sair </button>
-    
-  </div>
-  
+    <div class="home">
+      <button @click="sair"> Sair </button>  
+      <List/>
+      <Search/> 
+    </div>
 </template>
 
 <script>
 import firebase from 'firebase';
-
 import Search from '@/components/Search'
 import List from '@/components/List'
 

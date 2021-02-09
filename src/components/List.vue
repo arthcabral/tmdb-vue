@@ -2,11 +2,12 @@
   <div id="app">
     <div>
       <input type="text"
-        v-model="newMovie"
-        @keyup.enter="teste">
-      <button  @click="teste">
+        v-model="list.titulo"
+        @keyup.enter="addMovie">
+      <button  @click="addMovie">
         Add Movie
       </button>
+      <button @click= "teste"> Teste </button>
     </div>
     <ul class="movieList">
       <li v-for="movie in movies" 
@@ -23,6 +24,7 @@
 <script>
 
 import firebase from 'firebase'
+
 export default {
     name: 'list',
     data() {
@@ -51,9 +53,9 @@ export default {
             timestamp: new Date()
           }
         );
-        this.newMovie = '';
+       
       },
-
+       
       teste: function(){
         debugger
           console.log(this.$firestore)
