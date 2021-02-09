@@ -1,7 +1,6 @@
 <template>
   <div class="home">
     <button @click="sair">Encerrar sessão</button>
-    <List />
     <Search />
   </div>
 </template>
